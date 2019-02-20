@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryOldbExcel", "QueryOldbExcel\QueryOldbExcel.csproj", "{7695FB63-E840-45A9-9ED9-8F61B4A94DC7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleQueryOLDBExcel", "SimpleQueryOLDBExcel\SimpleQueryOLDBExcel.csproj", "{315CAC25-2621-4016-B5C5-D980D6D2704C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7695FB63-E840-45A9-9ED9-8F61B4A94DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7695FB63-E840-45A9-9ED9-8F61B4A94DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7695FB63-E840-45A9-9ED9-8F61B4A94DC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{315CAC25-2621-4016-B5C5-D980D6D2704C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{315CAC25-2621-4016-B5C5-D980D6D2704C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{315CAC25-2621-4016-B5C5-D980D6D2704C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{315CAC25-2621-4016-B5C5-D980D6D2704C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

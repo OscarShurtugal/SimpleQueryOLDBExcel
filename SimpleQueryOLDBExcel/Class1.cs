@@ -5,24 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QueryOldbExcel
+namespace SimpleQueryOLDBExcel
 {
-    internal class Program
+    public class MethodsSimpleQueryOLDBExcel
     {
-        private static void Main(string[] args)
-        {
-            string excelSheet = "Sheet1";
-            string filePath = @"C:\Users\oscar\Desktop\vlookupTrial.xlsx";
-            string columnaASeleccionar = "First Name";
-            string columnaDondeBuscar = "Last Name";
-            string valorBuscado = "Fontana";
-
-         
-
-            Console.WriteLine(oledbExcelColumnQuery(excelSheet, filePath,columnaASeleccionar,columnaDondeBuscar,valorBuscado));
-
-            Console.ReadLine();
-        }
 
         /// <summary>
         /// This method will perform a Query to the Excel File to certain columns given as parameters.
@@ -34,21 +20,21 @@ namespace QueryOldbExcel
         /// <param name="columnaDondeBuscar"></param>
         /// <param name="valorBuscado"></param>
         /// <returns></returns>
-        private static string oledbExcelColumnQuery(string excelSheetName, string filePath, string columnWithTheResult, string columnToPerformWhereOperation, string valueLookedFor)
+        public string oledbExcelColumnQuery(string excelSheetName, string filePath, string columnWithTheResult, string columnToPerformWhereOperation, string valueLookedFor)
         {
 
             String excelConnString = String.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties=\"Excel 12.0;HDR=YES\"", filePath);
-            
+
             //Create Connection to Excel workbook
             try
             {
                 using (OleDbConnection excelConnection = new OleDbConnection(excelConnString))
                 {
                     string query = "Select ["+columnWithTheResult+"] from ["+excelSheetName+"$] Where ["+columnToPerformWhereOperation+"] ='"+valueLookedFor+"'";
-                
+
                     //Create OleDbCommand to fetch data from Excel 
                     //using (OleDbCommand cmd = new OleDbCommand("Select [First Name] from ["+excelSheetName+"$] Where [Last Name]='Fontana'", excelConnection))
-                    using (OleDbCommand cmd = new OleDbCommand(query,excelConnection))
+                    using (OleDbCommand cmd = new OleDbCommand(query, excelConnection))
                     {
                         excelConnection.Open();
                         using (OleDbDataReader dReader = cmd.ExecuteReader())
@@ -60,7 +46,7 @@ namespace QueryOldbExcel
                             }
                             else
                             {
-                                return "NO ENCONTRE NADA";
+                                return "NO VALUE FOUND";
                             }
                         }
 
@@ -74,6 +60,5 @@ namespace QueryOldbExcel
             }
 
         }
-
     }
 }
